@@ -1,0 +1,3 @@
+addRandomly(world, actors);
+world.show();
+}}

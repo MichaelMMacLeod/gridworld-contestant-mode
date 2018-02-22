@@ -1,0 +1,35 @@
+import info.gridworld.world.*;
+import info.gridworld.gui.*;
+import info.gridworld.grid.*;
+import info.gridworld.actor.*;
+
+import java.util.ArrayList;
+
+import TMP_CONTESTANT_PARTS.*;
+
+class Main {
+    /*
+     * Adds the contents of `actors' to random Locations in `world'.
+     */
+    static void addRandomly(ActorWorld world, ArrayList<Actor> actors) {
+        ArrayList<Location> open = new ArrayList<>();
+
+        for (int r = 0; r < world.getGrid().getNumRows(); r++) {
+            for (int c = 0; c < world.getGrid().getNumCols(); c++) {
+                open.add(new Location(r, c));
+            }
+        }
+        
+        for (Actor a : actors) {
+            int s = open.size();
+
+            if (s == 0) {
+                System.out.println("Warning: not enough space to add all actors --- skipping the rest.");
+                break;
+            }
+
+            int rand = (int) (Math.random() * s);
+            world.add(open.remove(rand), a);
+        }
+    }
+    public static void main(String[] args) {
