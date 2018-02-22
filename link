@@ -1,11 +1,11 @@
 #!/bin/bash
 
+# A contestant is an Actor that has a constructor with no parameters.
+# 
 # Put contestant *.java files in ./contestants
 # for example,
-#   ./contestants/Hopper.java
-#   and
-#   ./contestants/Jumper.java
-#   will be both placed in the grid.
+#   ./contestants/Hopper.java and ./contestants/Jumper.java will both be placed in 
+#   the grid.
 
 echo "Michael's GridWorld Contestant Linker"
 echo ""
@@ -17,7 +17,7 @@ echo ""
 
 # Bugs:
 #   GridWorld sometimes starts with a blank grid when it should start with one that has
-#   actors in it. Restarting with '-fast' afterwards should probably work.
+#   actors in it. Retrying with 'java Main' should probably fix it.
 
 ### cleanup, if necessary 
 
