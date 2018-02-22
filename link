@@ -9,10 +9,10 @@
 
 echo "Michael's GridWorld Contestant Linker"
 echo ""
-echo "Usage: ./LINK_PARTS.sh [rows columns] [-fast]"
+echo "Usage: ./link [rows columns] [-fast]"
 echo "  rows     the number of rows of the grid (default 20)"
 echo "  columns  the number of columns of the grid (default 20)"
-echo "  -fast    without -fast, LINK_PARTS will explicitely compile GridWorld"
+echo "  -fast    without -fast, link will explicitely compile GridWorld"
 echo ""
 
 # Bugs:
