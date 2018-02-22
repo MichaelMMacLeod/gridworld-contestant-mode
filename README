@@ -1,0 +1,24 @@
+Michael's GridWorld Contestant Linker
+
+This program takes the Actors in ./contestants/ and randomly places them in a bounded grid
+of a certain size.
+
+Usage: ./link [rows columns] [-fast]
+  rows     the number of rows of the grid (default 20)
+  columns  the number of columns of the grid (default 20)
+  -fast    without -fast, link will explicitely compile GridWorld
+
+Contestants
+    A contestant is an Actor that has a constructor with no parameters.
+
+    Put contestant *.java files in ./contestants.
+
+    for example, ./contestants/Hopper.java and ./contestants/Jumper.java will both be 
+    placed in the grid.
+
+Bugs
+    GridWorld uses some deprecated/unsafe/unchecked java 'features'.
+
+    GridWorld sometimes starts with a blank grid when it should start with one that has
+    actors in it. Retrying with 'java Main' should probably fix it. (This is probably due
+    to the bug above).
