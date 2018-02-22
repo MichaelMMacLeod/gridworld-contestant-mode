@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Put contestant *.java files in ./CONTESTANT_PARTS
-# ie, 
-#   ./CONTESTANT_PARTS/Hopper.java
+# Put contestant *.java files in ./contestants
+# for example,
+#   ./contestants/Hopper.java
 #   and
-#   ./CONTESTANT_PARTS/Jumper.java
+#   ./contestants/Jumper.java
 #   will be both placed in the grid.
 
 echo "Michael's GridWorld Contestant Linker"
@@ -46,7 +46,7 @@ echo "adding contestants..."
 
 mkdir TMP_CONTESTANT_PARTS
 
-cp ./CONTESTANT_PARTS/* ./TMP_CONTESTANT_PARTS
+cp ./contestants/* ./TMP_CONTESTANT_PARTS
 CONTESTANTS=$(ls ./TMP_CONTESTANT_PARTS)
 
 for FILE_NAME in $CONTESTANTS; do
