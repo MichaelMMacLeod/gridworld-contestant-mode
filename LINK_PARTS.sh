@@ -28,7 +28,7 @@ rm -rf TMP_CONTESTANT_PARTS 2> /dev/null
 
 echo "setting up grid... "
 
-cp ./PART_MAIN_START TMP_MAIN
+cp ./part/main_start TMP_MAIN
 
 if [[ $1 && $2 ]]; then
     echo " ==> Grid of size $1x$2 selected."
@@ -60,7 +60,7 @@ done
 
 ### setup the end of TMP_MAIN
 
-cat PART_MAIN_END >> TMP_MAIN
+cat ./part/main_end >> TMP_MAIN
 
 ### remove temp files
 
