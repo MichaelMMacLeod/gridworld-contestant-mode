@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Michael's GridWorld Contestant Linker"
+echo "Michael's GridWorld Contestant Mode"
 echo ""
 echo "Usage: ./link [rows columns] [-fast]"
 echo "  rows     the number of rows of the grid (default 20)"

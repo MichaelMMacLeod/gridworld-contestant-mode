@@ -1,4 +1,4 @@
-Michael's GridWorld Contestant Linker
+Michael's GridWorld Contestant Mode
 
 This program takes the Actors in ./contestants/ and randomly places them in a bounded grid
 of a certain size.
