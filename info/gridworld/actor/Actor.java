@@ -190,7 +190,6 @@ public class Actor
      */
     public String toString()
     {
-        return getClass().getName() + "[location=" + location + ",direction="
-                + direction + ",color=" + color + "]";
+        return getClass().getSimpleName();
     }
 }

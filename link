@@ -27,6 +27,7 @@ else
     echo "ActorWorld world = new ActorWorld(new BoundedGrid<Actor>(20, 20));" >> TMP_MAIN
 fi
 
+echo "world.show();" >> TMP_MAIN
 echo "ArrayList<Actor> actors = new ArrayList<>();" >> TMP_MAIN
 
 ### add contestants to TMP_MAIN

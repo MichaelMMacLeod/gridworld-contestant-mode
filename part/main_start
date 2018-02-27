@@ -29,7 +29,16 @@ class Main {
             }
 
             int rand = (int) (Math.random() * s);
-            world.add(open.remove(rand), a);
+
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {}
+
+            Location chosen = open.remove(rand);
+            
+            System.out.println("Adding " + a + " at " + chosen);
+
+            world.add(chosen, a);
         }
     }
     public static void main(String[] args) {
