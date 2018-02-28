@@ -108,7 +108,12 @@ public class ActorWorld extends World<Actor>
 
                 for (Actor dead : deaths) {
                     System.out.println(a + " killed " + dead + "!");
-                    System.out.println(" ==> There are " + afterAct.size() + " contestants remaining");
+
+                    int nalive = afterAct.size();
+                    System.out.println(" ==> " + afterAct.size() + " remaining");
+                    if (nalive == 1) {
+                        System.out.println(" ==> We have a winner! Congratulations to " + afterAct.get(0));
+                    }
                 }
             }
         }
