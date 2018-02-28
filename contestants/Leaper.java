@@ -6,13 +6,13 @@ import info.gridworld.grid.Location;
 
 import java.awt.Color;
 
-public class Jumper extends Actor {
-    public Jumper() {
+public class Leaper extends Actor {
+    public Leaper() {
         setColor(Color.PINK);
     }
 
-    public Jumper(Color JumperColor) {
-        setColor(JumperColor);
+    public Leaper(Color LeaperColor) {
+        setColor(LeaperColor);
     }
 
     public void act() {

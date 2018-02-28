@@ -47,18 +47,21 @@ public class Hopper extends Actor {
         Location next = loc.getAdjacentLocation(getDirection());
         if (!gr.isValid(next))
             return false;
-        Actor neighbor = gr.get(next);
-        if (!((neighbor == null) 
-                    || (neighbor instanceof Flower) 
-                    || (neighbor instanceof Rock))) {
-            return false;
-        }
 
         Location twoAway = next.getAdjacentLocation(getDirection());
-        if (!gr.isValid(twoAway))
-            return false;
-
-        neighbor = gr.get(twoAway);
-        return (neighbor == null) || (neighbor instanceof Flower);
+        return gr.isValid(twoAway);
+//
+//        Actor neighbor = gr.get(next);
+//        if (!((neighbor == null) 
+//                    || (neighbor instanceof Flower) 
+//                    || (neighbor instanceof Rock))) {
+//            return false;
+//        }
+//
+//        if (!gr.isValid(twoAway))
+//            return false;
+//
+//        neighbor = gr.get(twoAway);
+//        return (neighbor == null) || (neighbor instanceof Flower);
     }
 }

@@ -54,6 +54,39 @@ public class ActorWorld extends World<Actor>
         super.show();
     }
 
+    private static ArrayList<Actor> getAliveActorsIn(Grid<Actor> grid) {
+        ArrayList<Actor> alive = new ArrayList<>();
+
+        for (Location l : grid.getOccupiedLocations()) {
+            alive.add(grid.get(l));
+        }
+
+        return alive;
+    }
+
+    private static ArrayList<Actor> getDeathsBetween(ArrayList<Actor> before,
+                                                     ArrayList<Actor> after) 
+    {
+        ArrayList<Actor> deaths = new ArrayList<>();
+
+        for (Actor i : before) {
+            boolean alive = false;
+
+            for (Actor j : after) {
+                if (i == j) {
+                    alive = true;
+                    break;
+                }
+            }
+
+            if (!alive) {
+                deaths.add(i);
+            }
+        }
+
+        return deaths;
+    }
+
     public void step()
     {
         Grid<Actor> gr = getGrid();
@@ -64,8 +97,20 @@ public class ActorWorld extends World<Actor>
         for (Actor a : actors)
         {
             // only act if another actor hasn't removed a
-            if (a.getGrid() == gr)
+            if (a.getGrid() == gr) {
+                ArrayList<Actor> beforeAct = getAliveActorsIn(gr);
+
                 a.act();
+
+                ArrayList<Actor> afterAct = getAliveActorsIn(gr);
+
+                ArrayList<Actor> deaths = getDeathsBetween(beforeAct, afterAct);
+
+                for (Actor dead : deaths) {
+                    System.out.println(a + " killed " + dead + "!");
+                    System.out.println(" ==> There are " + afterAct.size() + " contestants remaining");
+                }
+            }
         }
     }
 
