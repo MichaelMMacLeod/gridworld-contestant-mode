@@ -11,7 +11,7 @@ class Main {
     /*
      * Adds the contents of `actors' to random Locations in `world'.
      */
-    static void addRandomly(ActorWorld world, ArrayList<Actor> actors) {
+    static void addRandomly(ActorWorld world, ArrayList<Actor> actors, int timeDelay) {
         ArrayList<Location> open = new ArrayList<>();
 
         for (int r = 0; r < world.getGrid().getNumRows(); r++) {
@@ -31,14 +31,31 @@ class Main {
             int rand = (int) (Math.random() * s);
 
             try {
-                Thread.sleep(1000);
-            } catch (Exception e) {}
+                Thread.sleep(timeDelay);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
             Location chosen = open.remove(rand);
             
             System.out.println("Adding " + a + " at " + chosen);
 
             world.add(chosen, a);
+            world.repaint();
         }
     }
     public static void main(String[] args) {
+        System.out.println("Gridworld contestant mode");
+
+        System.out.println();
+        System.out.println("Usage: ./java Main [timeDelay]");
+        System.out.println("  timeDelay  delay between contestant appearances in miliseconds (default 3000)");
+        System.out.println();
+
+        int timeDelay;
+
+        if (args.length > 0) {
+            timeDelay = Integer.parseInt(args[0]);
+        } else {
+            timeDelay = 3000;
+        }

@@ -261,7 +261,12 @@ public class World<T>
         return occupantClassNames;
     }
 
-    private void repaint()
+    // changed from private -> public so that we can call repaint() manually from
+    // ActorWorld. Reason being that when we put things in the World, they don't
+    // show up automatically (you have to manually send an update to the grid, through
+    // a mouse click, or scrolling). This way we can repaint the JFrame whenever we
+    // want.
+    public void repaint()
     {
         if (frame != null)
             frame.repaint();

@@ -76,11 +76,3 @@ fi
 
 echo " ==> Main.java"
 javac Main.java
-
-### run
-
-echo "running..."
-
-echo " ==> Main"
-
-java Main

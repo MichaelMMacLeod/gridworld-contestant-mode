@@ -1,3 +1,2 @@
-addRandomly(world, actors);
-world.show();
+addRandomly(world, actors, timeDelay);
 }}
