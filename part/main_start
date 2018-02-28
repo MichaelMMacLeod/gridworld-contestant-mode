@@ -28,6 +28,12 @@ class Main {
                 break;
             }
 
+            try {
+                Thread.sleep(timeDelay);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
             int rand = (int) (Math.random() * s);
 
             Location chosen = open.remove(rand);
@@ -36,12 +42,6 @@ class Main {
 
             world.add(chosen, a);
             world.repaint();
-
-            try {
-                Thread.sleep(timeDelay);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
     }
     public static void main(String[] args) {
