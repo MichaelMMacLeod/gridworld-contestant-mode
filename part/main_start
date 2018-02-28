@@ -30,18 +30,18 @@ class Main {
 
             int rand = (int) (Math.random() * s);
 
-            try {
-                Thread.sleep(timeDelay);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
             Location chosen = open.remove(rand);
             
             System.out.println("Adding " + a + " at " + chosen);
 
             world.add(chosen, a);
             world.repaint();
+
+            try {
+                Thread.sleep(timeDelay);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
     public static void main(String[] args) {
